@@ -1,0 +1,57 @@
+<script>
+  let pegawai = "Ridwan";
+  let jabatan = "Manager";
+  let status = "Menikah";
+  let gajipokok = "" ;
+  // Gaji pokok Manager=>15 jt, Asisten Manager=>10 jt, Staff=>5 jt
+
+  if (jabatan == "Manager") {
+    gajipokok = 15000000;
+  } else if (jabatan == "Asistenmanager") {
+    gajipokok = 10000000;
+  } else if (jabatan == "Staff") {
+    gajipokok = 5000000;
+  } else {
+    gajipokok = 0;
+  }
+
+  let tunjanganjabatan = gajipokok * 0.15;
+  let bpjs = gajipokok * 0.1;
+  let tunjangankeluarga = status == "Menikah" ? 0.2 * gajipokok : 0;
+  let totalgaji = gajipokok + tunjanganjabatan + tunjangankeluarga + bpjs;
+
+    document.write("<h2 align='center'>DATA PEGAWAI</h2>");
+    document.write("<table border='1' cellpadding='10' cellspacing='0' align='center'>");
+    document.write("<thead>");
+    document.write("<tr>");
+    document.write("<th>Nama Pegawai</th>");
+    document.write("<th>Jabatan</th>");
+    document.write("<th>Status</th>");
+    document.write("<th>Gaji Pokok</th>");
+    document.write("<th>Tunjangan Jabatan</th>");
+    document.write("<th>BPJS</th>");
+    document.write("<th>Tunjangan Keluarga</th>");
+    document.write("<th>Total Gaji</th>");
+    document.write("</tr>");
+    document.write("</thead>");
+    document.write("<tbody>");
+    document.write("<tr>");
+    document.write("<td>" + pegawai + "</td>");
+    document.write("<td>" + jabatan + "</td>");
+    document.write("<td>" + status + "</td>");
+    document.write("<td>" + gajipokok + "</td>");
+    document.write("<td>" + tunjanganjabatan + "</td>");
+    document.write("<td>" + bpjs + "</td>");
+    document.write("<td>" + tunjangankeluarga + "</td>");
+    document.write("<td>" + totalgaji + "</td>");
+    document.write("</tr>");
+    document.write("</tbody>");
+    document.write("<tfoot>");
+    document.write("<tr>");
+    document.write("<td colspan='7'>Total Gaji</td>");
+    document.write("<td>" + totalgaji + "</td>");
+    document.write("</tr>");
+    document.write("</tfoot>");
+    document.write("</table>");
+
+</script>
