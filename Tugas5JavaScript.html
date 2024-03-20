@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 5 JavaScript</title>
+    <link rel="stylesheet" href="css/style1.css" />
+  </head>
+  <body>
+    <h2>Letakkan kursor ke masing-masing kotak untuk melihat gambar</h2>
+    <div id="div1">
+      Ini hewan kucing
+      <audio id="d1" src="sound/Cat-huh.mp3"></audio>
+    </div>
+    <div id="div2">
+      Ayam
+      <audio id="d2" src="sound/Ayam.mp3"></audio>
+    </div>
+    <div id="div3">
+      Kodok
+      <audio id="d3" src="sound/Kodok.mp3"></audio>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+      // Tugas Hari Ini
+      // Ketika mouse berada di atau kotak atau gambar maka menghasilkan suara
+
+      $("document").ready(function () {
+        $("#div1").mouseover(function () {
+          d1.play();
+          $(this).css({
+            background:
+              "url('https://media1.tenor.com/m/7t63GFnoIPUAAAAd/huh-cat-huh-m4rtin.gif')",
+            "background-repeat": "no-repeat",
+            "background-size": "cover",
+          });
+        });
+        $("div").mouseout(function () {
+          $(this).css({
+            background: "gray",
+          });
+        });
+        $("#div2").mouseover(function () {
+          d2.play();
+          $(this).css({
+            background: "url('https://img.lovepik.com/photo/20211203/medium/lovepik-a-rooster-picture_501464830.jpg')",
+          });
+        });
+        $("#div3").mouseover(function () {
+          d3.play();
+          $(this).css({
+            background:
+              "url('https://media.tenor.com/iHmhywCIPiAAAAAM/kodok-acumalaka.gif')",
+            "background-repeat": "no-repeat",
+            "background-size": "cover",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
